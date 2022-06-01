@@ -1,0 +1,36 @@
+{
+  "name": "Apollo-graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf build",
+    "copy-schema": "copyfiles -u 1 src/graphql/schema/*.graphql build",
+    "copy-env": "cp .env .env.staging .env.production build",
+    "copy-required": "yarn copy-schema && yarn copy-env",
+    "build": "yarn clean && tsc && yarn copy-required",
+    "server": "yarn build && node build/app.js",
+    "start": "ENVIRONMENT=.env nodemon",
+    "start:staging": "ENVIRONMENT=.env.staging nodemon",
+    "start:production": "ENVIRONMENT=.env.production nodemon"
+  },
+  "dependencies": {
+    "@graphql-tools/schema": "^8.3.11",
+    "@types/axios": "^0.14.0",
+    "apollo-server": "^3.7.0",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "graphql": "^16.5.0",
+    "graphql-constraint-directive": "^3.1.1",
+    "graphql-tools": "^8.2.11",
+    "serializr": "^2.0.5",
+    "typescript": "^4.6.4",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.3.1",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.7.0"
+  }
+}

@@ -1,0 +1,5 @@
+type Mutation {
+  signup(userDetails: MobileNumber): Response!
+  otpVerification(userDetails: Otp): Response!
+  userInfo(userDetails: UserDetails): Response!
+}

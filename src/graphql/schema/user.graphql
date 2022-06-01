@@ -1,0 +1,21 @@
+type User {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  email: String!
+  mobile_number: String!
+}
+
+input MobileNumber {
+  mobile_number: String!
+}
+
+input Otp {
+  otp: String!
+}
+
+input UserDetails {
+  first_name: String!
+  last_name: String!
+  email: String! @constraint(format: "email", maxLength: 255, minLength: 4)
+}
