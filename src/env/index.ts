@@ -12,4 +12,5 @@ export const env = {
   NODE_ENV: process.env.NODE_ENV,
   API_URL: process.env.API_URL,
   DEBUG: process.env.DEBUG,
+  PORT: process.env.PORT
 };

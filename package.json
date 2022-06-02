@@ -10,9 +10,10 @@
     "copy-required": "yarn copy-schema && yarn copy-env",
     "build": "yarn clean && tsc && yarn copy-required",
     "server": "yarn build && node build/app.js",
-    "start": "ENVIRONMENT=.env nodemon",
-    "start:staging": "ENVIRONMENT=.env.staging nodemon",
-    "start:production": "ENVIRONMENT=.env.production nodemon"
+    "start": "node build/app.js",
+    "dev:start": "ENVIRONMENT=.env nodemon",
+    "dev:start:staging": "ENVIRONMENT=.env.staging nodemon",
+    "dev:start:production": "ENVIRONMENT=.env.production nodemon"
   },
   "dependencies": {
     "@graphql-tools/schema": "^8.3.11",
