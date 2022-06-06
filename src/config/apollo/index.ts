@@ -20,7 +20,7 @@ const ApolloServer = async () => {
       typeDefs,
       resolvers,
       debug: Boolean(env.DEBUG),
-      // mocks,
+      mocks,
       formatError: ErroreHandler.formatError,
       csrfPrevention: true,
     };
